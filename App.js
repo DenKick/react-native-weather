@@ -1,45 +1,43 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-function WeatherScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Weather</Text>
-    </View>
-  );
-}
+import WeatherScreen from './screens/WeatherScreen';
+import ForecastScreen from './screens/ForecastScreen';
 
-function ForecastScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Forecast</Text>
-    </View>
-  );
-}
-
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator tabBarOptions={{
-        activeTintColor: '#fff',
-        activeBackgroundColor: '#212121',
-        inactiveTintColor: '#212121',
-        inactiveBackgroundColor: '#fff',
-        tabBarOptions: {
-          showIcon: false,
-        },
-        labelStyle: {
-          fontSize: 20,
-          padding: 'auto',
-        }
-      }}>
-        <Tab.Screen name="Weather" component={WeatherScreen} />
-        <Tab.Screen name="Forecast" component={ForecastScreen} />
-      </Tab.Navigator>
+      <Tab.Navigator
+      initialRouteName="Weather"
+      activeColor="#fff"
+      shifting={true}
+      barStyle={{backgroundColor: '#212121', width: '100%'}}
+    >
+      <Tab.Screen
+        name="Weather"
+        component={WeatherScreen}
+        options={{
+          tabBarLabel: 'Weather',
+          tabBarIcon: ({ color, focused }) => (
+            <MaterialCommunityIcons name="weather-sunny" color={color} size={focused ? 25 : 23} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Forecast"
+        component={ForecastScreen}
+        options={{
+          tabBarLabel: 'Forecast',
+          tabBarIcon: ({ color, focused }) => (
+            <MaterialCommunityIcons name="view-week" color={color} size={focused ? 25 : 23} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
     </NavigationContainer>
   );
 }
