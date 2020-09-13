@@ -1,0 +1,16 @@
+ {
+   "expo": {
+    "name": "Weather App",
+    "icon": "./icon.png",
+    "version": "0.1.0",
+    "slug": "Weather-everywhere",
+    "ios": {
+      "bundleIdentifier": "com.denis.weather",
+      "buildNumber": "0.1.0"
+    },
+    "android": {
+      "package": "com.denis.weather",
+      "versionCode": 1
+    }
+   }
+ }
