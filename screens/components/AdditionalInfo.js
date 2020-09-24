@@ -15,7 +15,7 @@ class AdditionalInfo extends React.Component {
 
     return(
       <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: marginLeft}}>
-        <MaterialCommunityIcons name={iconName} color='#000a12' size={25}/>
+        <MaterialCommunityIcons name={iconName} color='#ffffff' size={25}/>
         <Text style={styles.additionalText}>{parseInt(info)} {units}</Text>
       </View>
     );
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
   additionalText: {
     paddingLeft: 5,
     lineHeight: 50,
+    color: '#ffffff',
   }
 });
 

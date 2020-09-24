@@ -110,14 +110,14 @@ class WeatherScreen extends React.Component {
 
     return (
       <View style={styles.container}>
-        { isLoading ? <ActivityIndicator size="large" color="#000a12" /> : (
+        { isLoading ? <ActivityIndicator size="large" color="#ffffff" /> : (
           <>
             <Text style={styles.city}>
-              <MaterialCommunityIcons name="near-me" color='#000a12' size={25} />
+              <MaterialCommunityIcons name="near-me" color='#ffffff' size={25} />
               {weather.city_name}, {weather.country_code}
             </Text>
             <View style={styles.weatherContainer}>
-              <MaterialCommunityIcons name={weatherIcons[weather.weather.icon]} color='#000a12' size={200} style={styles.weatherIcon} />
+              <MaterialCommunityIcons name={weatherIcons[weather.weather.icon]} color='#ffffff' size={200} style={styles.weatherIcon} />
               <Text style={styles.temperature}>{weather.temp}°C</Text>
             </View>
             <View style={styles.additionalInformation}>
@@ -133,7 +133,7 @@ class WeatherScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#eceff1',
+    backgroundColor: '#1b5bc1',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
   city: {
     marginTop: 50,
     marginBottom: 'auto',
-    color: '#000a12',
+    color: '#ffffff',
     fontSize: 35,
     textAlign: 'center',
   },
@@ -162,6 +162,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 45,
     marginTop: 15,
+    color: "#ffffff",
   },
 
   additionalInformation: {
